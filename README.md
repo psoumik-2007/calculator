@@ -57,6 +57,14 @@ Open [http://127.0.0.1:3000](http://127.0.0.1:3000) in your browser. To use Uvic
 python -m uvicorn main:app --reload --host 127.0.0.1 --port 3000
 ```
 
+For a hosted environment, bind Uvicorn to the container's network interface:
+
+```bash
+python -m uvicorn main:app --host 0.0.0.0 --port 3000
+```
+
+For public deployments, put the app behind a trusted HTTPS reverse proxy.
+
 ## API
 
 Calculate an expression by sending JSON to `POST /calculate`:
